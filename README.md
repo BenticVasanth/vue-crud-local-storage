@@ -36,6 +36,8 @@ npm run serve
 ```
 Open the URL shown in the terminal.
 
+---
+
 ## Features
 
 - Application state is stored in Vue reactive data.
@@ -45,6 +47,8 @@ Open the URL shown in the terminal.
   ```
   vue-crud-local-storage-items
   ```
+
+---
 
 ## Project Structure
 ```
