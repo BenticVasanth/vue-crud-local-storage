@@ -30,8 +30,6 @@ npm install
 #### Run the Application
 
 ```
-npm run dev
-# or
 npm run serve
 ```
 Open the URL shown in the terminal.
@@ -47,14 +45,3 @@ Open the URL shown in the terminal.
   ```
   vue-crud-local-storage-items
   ```
-
----
-
-## Project Structure
-```
-src/
- ├── App.vue
- ├── main.js
- ├── components/
- └── services/ | composables/
-```
