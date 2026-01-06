@@ -1,94 +1,56 @@
 # vue-crud-local-storage
 
-A small Vue-based CRUD (Create, Read, Update, Delete) example application that stores data in the browser's localStorage. This project is intended as a lightweight starter / learning resource for building CRUD apps with Vue and persisting data locally without any backend.
+A minimal Vue CRUD (Create, Read, Update, Delete) application using browser `localStorage`.  
+Designed for learning Vue basics with simple client-side persistence — no backend required.
+
+---
 
 ## Features
 
-- Create, read, update and delete items
-- Data persisted in localStorage so it survives page reloads
-- Simple, easy-to-understand structure suitable for beginners
-- Single-file components (SFCs) and straightforward state management
+- Create, Read, Update, Delete operations.
+- Data persistence using `localStorage`.
+- Simple and clean Vue Single File Components (SFC).
+- Lightweight and beginner-friendly.
 
-## Demo
+---
 
-Open the app in your browser after running the dev server. The app provides a simple list interface where you can add items, edit them inline (or in a form), and delete items. All changes are saved to localStorage automatically.
+## Getting Started
 
-## Screenshots
+### Prerequisites
 
-Add screenshots in the `docs/` folder or replace these placeholders with images hosted in this repo.
-
-## Getting started
-
-Prerequisites
-
-- Node.js (v12+ recommended)
+- Node.js (v14+)
 - npm or yarn
 
-Install dependencies
+### Installation
 
-```bash
+```
 npm install
+```
+
+#### Run the Application
+
+```
+npm run dev
 # or
-# yarn
+npm run serve
 ```
+Open the URL shown in the terminal.
 
-Run the development server
+## Features
 
-Check package.json to see which dev script is available for this project. Common scripts:
+- Application state is stored in Vue reactive data.
+- Data is loaded from localStorage on startup.
+- Any create, update, or delete action automatically updates localStorage.
+- Uses a single storage key:
+  ```
+  vue-crud-local-storage-items
+  ```
 
-```bash
-npm run dev    # for Vite / modern setups
-# or
-npm run serve  # for Vue CLI setups
+## Project Structure
 ```
-
-Then open http://localhost:3000 (Vite) or the URL printed by the CLI.
-
-Build for production
-
-```bash
-npm run build
+src/
+ ├── App.vue
+ ├── main.js
+ ├── components/
+ └── services/ | composables/
 ```
-
-Lint / Format (if available)
-
-```bash
-npm run lint
-```
-
-## How it works
-
-- The application keeps the list of items in a Vue component's reactive state.
-- On any create/update/delete operation the state is written to localStorage using a small storage utility.
-- On app startup the storage utility reads from localStorage and hydrates the app state.
-
-Typical localStorage key: `your-app-key` (check `src` for the actual key used in this repo).
-
-Files of interest
-
-- `src/` — main source files
-- `src/components/` — Vue components for list, item, form, etc.
-- `src/services/storage.js` (or similar) — wrapper around localStorage reads/writes
-
-## Customization
-
-- Change the localStorage key inside the storage utility if you want the app to use a different namespace.
-- Swap the localStorage persistence with an API call to a backend when you want to add server sync.
-
-## Development tips
-
-- Keep state mutations centralized (a small store or composable) so persistence is easy to manage.
-- Validate inputs before saving to prevent corrupt data in localStorage.
-- Consider namespacing your keys and using JSON versioning if you plan to change stored data shape.
-
-## Contributing
-
-Contributions are welcome. Open an issue or send a PR with a clear description of the change.
-
-## License
-
-MIT
-
-## Acknowledgements
-
-This project is a simple educational example — inspired by many small tutorials and starter kits for Vue CRUD apps using localStorage.
